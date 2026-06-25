@@ -1,6 +1,40 @@
 {% extends "store/base.html" %}
 {% block body %}
-    <p>{{product.name}}</p>
-    <p>{{product.desc}}</p>
-    <p>{{product.price}}</p>
+<!--Outermost container-->
+<div>
+    <!--Product Image-->
+    <div>
+        <img class="w-80 h-80" src="{{product.image.url}}" alt="">
+    </div>
+    <!--Product Details-->
+    <div>
+        <h1>{{product.name}}</h1>
+        <div>★★★★☆ (12,345)</div>
+        <p>{{product.price}}</p>
+        <p>Inclusive of all taxes</p>
+        <ul>
+            <li>{{product.desc}}</li>
+        </ul>
+    </div>
+    <!--Buy Box-->
+    <div>
+        <p>{{product.price}}</p>
+        <div>
+            <select name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+        </div>
+        <p>FREE delivery by Tommorow</p>
+        {% if product.stock %}
+            <p>In stock</p>
+        {% else %}
+            <p>Out of stock</p>
+        {% endif %}
+        <button>Add To Cart</button>
+        <button>Buy Now</button>
+        <p>Sold by: ABC Official store</p>
+    </div>
+</div>
 {% endblock body %}
