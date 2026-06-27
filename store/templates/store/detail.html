@@ -1,24 +1,24 @@
 {% extends "store/base.html" %}
 {% block body %}
 <!--Outermost container-->
-<div>
+<div class="max-w-7xl mx-auto grid grid-cols-3 gap-10">
     <!--Product Image-->
-    <div>
-        <img class="w-80 h-80" src="{{product.image.url}}" alt="">
+    <div class="col-span-1">
+        <img class="w-80 h-80 rounded-lg border shadow-sm" src="{{product.image.url}}" alt="">
     </div>
     <!--Product Details-->
-    <div>
-        <h1>{{product.name}}</h1>
-        <div>★★★★☆ (12,345)</div>
-        <p>{{product.price}}</p>
-        <p>Inclusive of all taxes</p>
+    <div class="col-span-1 space-y-4">
+        <h1 class="text-2xl font-semibold text-gray-900">{{product.name}}</h1>
+        <div class="text-yellow-500">★★★★☆ <span class="text-gray-900">(12,345 ratings)</span></div>
+        <p class="text-3xl font-bold text-green-500">$ {{product.price}}</p>
+        <p class="text-sm text-green-700 font-medium">Inclusive of all taxes</p>
         <ul>
             <li>{{product.desc}}</li>
         </ul>
     </div>
     <!--Buy Box-->
-    <div>
-        <p>{{product.price}}</p>
+    <div class="col-span-1 border rounded-lg p-6 space-y-4 shadow-md">
+        <p class="text-2xl font-semibold text-gray-900">$ {{product.price}}</p>
         <div>
             <select name="" id="">
                 <option value="">1</option>
@@ -26,15 +26,15 @@
                 <option value="">3</option>
             </select>
         </div>
-        <p>FREE delivery by Tommorow</p>
+        <p class="text-sm text-green-700">FREE delivery by Tommorow</p>
         {% if product.stock %}
-            <p>In stock</p>
+            <p class="text-sm text-green-700">In stock</p>
         {% else %}
-            <p>Out of stock</p>
+            <p class="text-sm text-green-700">Out of stock</p>
         {% endif %}
-        <button>Add To Cart</button>
-        <button>Buy Now</button>
-        <p>Sold by: ABC Official store</p>
+        <button class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg">Add To Cart</button>
+        <button class="w-full bg-gray-900 text-white font-semibold py-2 rounded-lg">Buy Now</button>
+        <p class="text-sm text-green-600">Sold by: ABC Official store</p>
     </div>
 </div>
 {% endblock body %}
