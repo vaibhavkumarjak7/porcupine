@@ -9,11 +9,10 @@
         {% for product in products %}
             <div class="rounded-lg shadow-lg p-4">
                 <img class="rounded-md mb-4 w-80 h-80 mx-auto" src="{{product.image.url}}" alt="">
-                <a class="text-lg font-semibold" href="">{{product.name}}</a>
+                <a class="text-lg font-semibold" href="{{product.get_absolute_url}}">{{product.name}}</a>
                 <p class="text-gray-600">{{product.desc}}</p>
-                <p class="text-green-500 font-bold mt-2 text-lg">${{product.price}}</p>
+                <p class="text-green-500 font-bold mt-2 text-lg">$ {{product.price}}</p>
             </div>
-        
         {% endfor %}    
     </div>
 </div>
