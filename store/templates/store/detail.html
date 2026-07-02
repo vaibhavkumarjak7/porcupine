@@ -40,6 +40,14 @@
 <script>
     $(document).on("click", "#atc", function(e){
         console.log("Add to cart button clicked")
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'cart_add' %}",
+            data: {
+                csrfmiddlewaretoken: "{{csrf_token}}",
+            },
+        })
     });
 </script>
 {% endblock body %}
